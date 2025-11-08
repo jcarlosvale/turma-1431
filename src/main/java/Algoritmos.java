@@ -8,11 +8,14 @@ import java.util.function.Predicate;
 
 public class Algoritmos {
 
+
+
     public boolean ehPar(int x) {
         return x % 2 == 0;
     }
 
-    public long contarNumeroDeOcorrencias(List<Integer> lista, Integer numero) {
+    public long contarNumeroDeOcorrencias(List<Integer> lista,
+                                          Integer numero) {
 
         Objects.requireNonNull(lista, "A lista nao pode estar vazia");
         Objects.requireNonNull(numero, "O numero fornecido nao pode ser nulo");
