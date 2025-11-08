@@ -11,6 +11,7 @@ public class Algoritmos {
 
 
     public boolean ehPar(int x) {
+        if (x <= 0) throw new IllegalArgumentException();
         return x % 2 == 0;
     }
 

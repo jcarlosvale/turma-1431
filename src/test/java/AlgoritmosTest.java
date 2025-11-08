@@ -4,10 +4,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 class AlgoritmosTest {
 
@@ -37,31 +36,27 @@ class AlgoritmosTest {
         assertFalse(ehPar);
     }
 
-//    @Test
-//    void verificaEhParNumeroNegativoTest() {
-//        //GIVEN - DADO --> DADA A ENTRADA
-//        Algoritmos algoritmos = new Algoritmos();
-//        int x = -4;
-//
-//        //WHEN - QUANDO EU EXECUTO O MÉTODO
-//        boolean ehPar = algoritmos.ehPar(x);
-//
-//        //THEN - ENTAO VERIFICO ...
-//        ???????????????
-//    }
+    @Test
+    void verificaEhParNumeroNegativoTest() {
+        //GIVEN - DADO --> DADA A ENTRADA
+        Algoritmos algoritmos = new Algoritmos();
+        int x = -4;
 
-//    @Test
-//    void verificaEhParNumeroZeroTest() {
-//        //GIVEN - DADO --> DADA A ENTRADA
-//        Algoritmos algoritmos = new Algoritmos();
-//        int x = 0;
-//
-//        //WHEN - QUANDO EU EXECUTO O MÉTODO
-//        boolean ehPar = algoritmos.ehPar(x);
-//
-//        //THEN - ENTAO VERIFICO ...
-//        ???????????????
-//    }
+        //WHEN - QUANDO EU EXECUTO O MÉTODO
+        //THEN - ENTAO VERIFICO ...
+        assertThrows(Exception.class, () -> algoritmos.ehPar(x));
+    }
+
+    @Test
+    void verificaEhParNumeroZeroTest() {
+        //GIVEN - DADO --> DADA A ENTRADA
+        Algoritmos algoritmos = new Algoritmos();
+        int x = 0;
+
+        //WHEN - QUANDO EU EXECUTO O MÉTODO
+        //THEN - ENTAO VERIFICO ...
+        assertThrows(Exception.class, () -> algoritmos.ehPar(x));
+    }
 
     @Test
     void contarNumeroDeOcorrenciasTest() {
@@ -114,11 +109,12 @@ class AlgoritmosTest {
         Aluno aluno1 = new Aluno("Joao");
         Aluno aluno2 = new Aluno("Jose");
         Aluno aluno3 = new Aluno("Joao");
+        Aluno aluno4 = aluno2;
 
         //WHEN
         //THEN
-        assertEquals(aluno1, aluno3);
-        assertSame(aluno1, aluno3);
+        assertEquals(aluno4, aluno2);
+        assertSame(aluno4, aluno2);
         //assertNotEquals(aluno1, aluno2);
     }
 
